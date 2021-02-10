@@ -112,7 +112,7 @@ variables:
   publishChanges: ${{ parameters.publishChanges }}
   overrideSkipCI: ${{ parameters.overrideSkipCI }}
 
-  phpVersion: 7.2
+  phpVersion: 8.0.1
 
 # This stage is the core dependency for all other stages.
 stages:
