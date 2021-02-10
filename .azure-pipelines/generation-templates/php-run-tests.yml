@@ -2,16 +2,10 @@
 
 steps:
   - script: |
-      sudo update-alternatives --set php /usr/bin/php$(phpVersion)
-      sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
-      sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
-      sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
-      sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
       php -version
-    displayName: 'Use PHP version $(phpVersion)'
+    displayName: 'Print php version'
 
   - script: |
-      composer install --no-interaction --prefer-dist
-      ./vendor/bin/phpunit --exclude-group functional
+      phpunit --exclude-group functional
     displayName: Run PHP tests
     workingDirectory: msgraph-sdk-php

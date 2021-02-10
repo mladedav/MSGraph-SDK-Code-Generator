@@ -112,8 +112,6 @@ variables:
   publishChanges: ${{ parameters.publishChanges }}
   overrideSkipCI: ${{ parameters.overrideSkipCI }}
 
-  phpVersion: 8.0.1
-
 # This stage is the core dependency for all other stages.
 stages:
 - stage: stage_build_and_publish_typewriter
