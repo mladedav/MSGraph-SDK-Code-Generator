@@ -118,6 +118,14 @@ steps:
     projects: ${{ parameters.repoName }}/**/*.csproj
     arguments: '--configuration $(buildConfiguration)'
 
+- pwsh: '$(scriptsDirectory)/git-push-files.ps1'
+  displayName: 'Git: push generated files'
+  env:
+    BranchName: zengin/inconsistency-test
+    PublishChanges: $(publishChanges)
+    OverrideSkipCI: $(overrideSkipCI)
+  workingDirectory: ${{ parameters.repoName }}
+
 # Checkin clean metadata into metadata repo or make it an artifact.
 - pwsh: '$(scriptsDirectory)/git-push-cleanmetadata.ps1'
 
