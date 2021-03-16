@@ -339,6 +339,8 @@ stages:
         cleanMetadataFolder: $(cleanMetadataFolderV1)
         languageSpecificSteps:
         - template: generation-templates/typescript.yml
+          paramaters: 
+            repoName: 'msgraph-typescript-typings'
 
 - stage: stage_typescript_beta
   dependsOn:
