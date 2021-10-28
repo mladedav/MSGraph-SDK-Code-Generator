@@ -132,11 +132,11 @@
         <NavigationProperty Name="timesOff" Type="Collection(graph.timeOff)" ContainsTarget="true" />
         <NavigationProperty Name="timeOffRequests" Type="Collection(graph.timeOffRequest)" ContainsTarget="true" />
       </EntityType>
-      <EntityType Name="call" BaseType="graph.entity" OpenType="true">
+      <EntityType Name="call" BaseType="graph.entity">
         <Property Name="subject" Type="Edm.String" />
       </EntityType>
       <EntityType Name="cloudCommunications" BaseType="graph.entity">
-        <NavigationProperty Name="calls" Type="Collection(graph.call)" ContainsTarget="true" />
+        <NavigationProperty Name="calls" Type="Collection(graph.call)"/>
         <NavigationProperty Name="callRecords" Type="Collection(microsoft.graph2.callRecords.callRecord)" ContainsTarget="true" />
       </EntityType>
       <EntityType Name="onenotePage" BaseType="graph.entity">

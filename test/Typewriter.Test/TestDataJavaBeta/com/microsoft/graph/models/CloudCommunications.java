@@ -34,8 +34,6 @@ public class CloudCommunications extends Entity implements IJsonBackedObject {
      * The Calls.
      * 
      */
-    @SerializedName(value = "calls", alternate = {"Calls"})
-    @Expose
 	@Nullable
     public CallCollectionPage calls;
 

@@ -8,8 +8,8 @@ package com.microsoft.graph.requests;
 import com.microsoft.graph.http.IRequestBuilder;
 import com.microsoft.graph.core.ClientException;
 import com.microsoft.graph.models.CloudCommunications;
-import com.microsoft.graph.requests.CallCollectionRequestBuilder;
-import com.microsoft.graph.requests.CallRequestBuilder;
+import com.microsoft.graph.requests.CallCollectionWithReferencesRequestBuilder;
+import com.microsoft.graph.requests.CallWithReferenceRequestBuilder;
 import com.microsoft.graph2.callrecords.requests.CallRecordCollectionRequestBuilder;
 import com.microsoft.graph2.callrecords.requests.CallRecordRequestBuilder;
 import java.util.Arrays;
@@ -66,8 +66,8 @@ public class CloudCommunicationsRequestBuilder extends BaseRequestBuilder<CloudC
      * @return the collection request builder
      */
     @Nonnull
-    public CallCollectionRequestBuilder calls() {
-        return new CallCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("calls"), getClient(), null);
+    public CallCollectionWithReferencesRequestBuilder calls() {
+        return new CallCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("calls"), getClient(), null);
     }
 
     /**
@@ -77,8 +77,8 @@ public class CloudCommunicationsRequestBuilder extends BaseRequestBuilder<CloudC
      * @param id the item identifier
      */
     @Nonnull
-    public CallRequestBuilder calls(@Nonnull final String id) {
-        return new CallRequestBuilder(getRequestUrlWithAdditionalSegment("calls") + "/" + id, getClient(), null);
+    public CallWithReferenceRequestBuilder calls(@Nonnull final String id) {
+        return new CallWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("calls") + "/" + id, getClient(), null);
     }
     /**
      *  Gets a request builder for the CallRecord collection
