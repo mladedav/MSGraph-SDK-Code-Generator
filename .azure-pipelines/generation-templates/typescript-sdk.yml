@@ -19,18 +19,10 @@ steps:
   displayName: 'Increment minor version number'
   workingDirectory: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/scripts'
 
-- uses: actions/checkout@v2.3.4
-- name: Use Node.js ${{ matrix.node-version }}
-  uses: actions/setup-node@v2.4.0
-  with:
-    always-auth: true
-    registry-url: 'https://npm.pkg.github.com'
-    scope: '@microsoft'
-    node-version: ${{ matrix.node-version }}
-    cache: 'npm'
-- run: npm ci
-  env:
-    NODE_AUTH_TOKEN: ${{ secrets.KIOTA_FEED_TOKEN }}
+- task: npmAuthenticate@0
+  inputs:
+    workingFile: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/.npmrc'
+- script: npm i @azure/identity @microsoft/kiota-abstractions @microsoft/kiota-http-fetchlibrary @microsoft/kiota-serialization-json -S
 
 - pwsh: |
     npm i @azure/identity -S
