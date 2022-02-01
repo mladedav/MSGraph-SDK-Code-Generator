@@ -20,14 +20,7 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/scripts'
 
 - task: npmAuthenticate@0
+  displayName: 'Update TypeScript dependecies'
   inputs:
     workingFile: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/.npmrc'
 - script: npm i @azure/identity @microsoft/kiota-abstractions @microsoft/kiota-http-fetchlibrary @microsoft/kiota-serialization-json -S
-
-- pwsh: |
-    npm i @azure/identity -S
-    npm i @microsoft/kiota-abstractions -S
-    npm i @microsoft/kiota-http-fetchlibrary -S
-    npm i @microsoft/kiota-serialization-json -S
-  displayName: 'Update typescript dependecies'
-  workingDirectory: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/'
