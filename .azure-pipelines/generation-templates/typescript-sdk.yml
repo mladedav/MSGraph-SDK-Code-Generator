@@ -19,11 +19,10 @@ steps:
   displayName: 'Increment minor version number'
   workingDirectory: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/scripts'
 
-- pwsh : |
+- pwsh: |
     npm i @azure/identity -S
     npm i @microsoft/kiota-abstractions -S
     npm i @microsoft/kiota-http-fetchlibrary -S
     npm i @microsoft/kiota-serialization-json -S
-  targetType: 'inline'
   displayName: 'Update typescript dependecies'
   workingDirectory: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/'
