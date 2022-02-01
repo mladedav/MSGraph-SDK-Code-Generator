@@ -23,4 +23,4 @@ steps:
   displayName: 'Update TypeScript dependecies'
   inputs:
     workingFile: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/.npmrc'
-- script: npm i @azure/identity @microsoft/kiota-abstractions @microsoft/kiota-http-fetchlibrary @microsoft/kiota-serialization-json -S
+- script: npm ci
