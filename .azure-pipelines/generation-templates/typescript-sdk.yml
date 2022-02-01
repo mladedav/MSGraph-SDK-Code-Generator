@@ -18,9 +18,3 @@ steps:
 - pwsh : $(Build.SourcesDirectory)/${{ parameters.repoName }}/scripts/incrementMinorVersion.ps1
   displayName: 'Increment minor version number'
   workingDirectory: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/scripts'
-
-- task: npmAuthenticate@0
-  displayName: 'Update TypeScript dependecies'
-  inputs:
-    workingFile: '$(Build.SourcesDirectory)/${{ parameters.repoName }}/.npmrc'
-- script: npm ci
