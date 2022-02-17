@@ -107,16 +107,6 @@ steps:
     Endpoint:  ${{ parameters.endpoint }}
   displayName: 'generate ${{ parameters.endpoint }} files for .NET'
 
-- checkout: ${{ parameters.repoName }}
-  displayName: checkout dotnet ${{ parameters.endpoint }}
-  fetchDepth: 1
-  persistCredentials: true
-
-- template: dotnet.yml
-  parameters:
-    repoName: msgraph-sdk-dotnet
-    dllName: Microsoft.Graph.dll
-
 # Checkin clean metadata into metadata repo or make it an artifact.
 - pwsh: '$(scriptsDirectory)/git-push-cleanmetadata.ps1'
 
